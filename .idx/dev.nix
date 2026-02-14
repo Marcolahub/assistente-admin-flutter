@@ -32,6 +32,16 @@
           manager = "flutter";
         };
       };
+      };
+    };
+    workspace = {
+      # Runs when a workspace is first created
+      onCreate = {
+        # Open editors for the following files by default, if they exist:
+        default.openFiles = [ "lib/main.dart" ];
+        # Ensure platform folders exist
+        flutter-create = "flutter create --platforms web,android .";
+      };
     };
   };
 }
